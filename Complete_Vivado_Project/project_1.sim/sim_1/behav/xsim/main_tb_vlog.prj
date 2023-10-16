@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../project_1.srcs/sources_1/new/alu.sv" \
+"../../../../project_1.srcs/sources_1/new/branch.sv" \
+"../../../../project_1.srcs/sources_1/new/control.sv" \
+"../../../../project_1.srcs/sources_1/new/dataMemory.sv" \
+"../../../../project_1.srcs/sources_1/new/immGen.sv" \
+"../../../../project_1.srcs/sources_1/new/instructionMemory.sv" \
+"../../../../project_1.srcs/sources_1/new/load.sv" \
+"../../../../project_1.srcs/sources_1/new/main.sv" \
+"../../../../project_1.srcs/sources_1/new/pc.sv" \
+"../../../../project_1.srcs/sources_1/new/registers.sv" \
+"../../../../project_1.srcs/sources_1/new/store.sv" \
+"../../../../project_1.srcs/sources_1/new/main_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
