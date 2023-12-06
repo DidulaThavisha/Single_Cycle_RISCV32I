@@ -1,28 +1,35 @@
 module main (
     input logic clk1,
-    input logic reset1,
-    output logic [31:0] PCIncrementIn,
-
-    output logic [3:0] ALUControl,
-    output logic [31:0] InstructionOut,
-    output logic [31:0] ALUResult,
-    output logic [31:0] PCOut1,
-    output logic [31:0] DataA,
-    output logic [31:0] DataB,
-    output logic [31:0] immediate,
+    input logic reset1, 
     
-    output logic Overflow,
-    output logic CarryOut
+    output logic [3:0] ALUoutput 
 );
-  
+    logic divided_clk;
+    logic [31:0] ALUResult;
+    logic [31:0] InstructionOut;
+    logic [3:0] ALUControl; 
+    logic [31:0] PCOut1;
+    logic [31:0] DataA;
+    logic [31:0] DataB;
+    logic [31:0] immediate;
+    logic [31:0] PCIncrementIn;
+    logic Overflow;
+    logic CarryOut;
+    
     logic [31:0] ReadData;
     logic [2:0] LControl;
     logic [1:0] SControl;
     logic [31:0] BbusOut;
     logic [31:0] WbBusOut;
-    logic [31:0] PCOut1;
-    
+ 
     //logic [25:0] inst;
+    assign ALUoutput = ALUResult[3:0];
+    
+    clk_divider CLOCK(
+        .clk(clk1),
+        .divided_clk(divided_clk)
+
+    );
 
     pc PC (
         .clk2(clk1),

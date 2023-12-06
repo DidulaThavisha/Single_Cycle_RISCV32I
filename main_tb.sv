@@ -26,29 +26,20 @@ module main_tb();
   logic clk;
   logic reset;
   logic [31:0] PCIn;
-  logic [31:0] PCOut;
-  logic [31:0] InstructionOut;
-  logic [3:0] ALUControl;
+  //logic [31:0] PCOut;
+  //logic [31:0] InstructionOut;
+  //logic [3:0] ALUControl;
   logic [31:0] ALUResult;
-  logic [31:0] DataA;
-  logic [31:0] DataB;
-  logic [31:0] immediate;
+  //logic [31:0] DataA;
+  //logic [31:0] DataB;
+  //logic [31:0] immediate;
  
   
 
   main u1 (
     .clk1(clk),
-    .reset1(reset),
-    .PCIncrementIn(PCIn),
-    .PCOut1(PCOut),    
-    .InstructionOut(InstructionOut),
-    .ALUControl(ALUControl),
-    .DataA(DataA),
-    .DataB(DataB),
-    .immediate(immediate),
-    .ALUResult(ALUResult),
-    .Overflow(Overflow),
-    .CarryOut(CarryOut)
+    .reset1(reset),   
+    .ALUResult(ALUResult)
   );
  
   

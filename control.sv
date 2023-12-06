@@ -3,6 +3,7 @@ module control(
 	input logic BrEq,
 	input logic BrLT,
 	output logic MemtoReg,
+	output logic PCSel,
 	output logic MemWrite,
 	output logic Branch,	
 	output logic immSel,
@@ -441,6 +442,8 @@ begin
 					LControl  =3'b010;
 					SControl  =2'b10;
 					ASel = 0;
+					if (BrEq==1 && BrLT==0)
+					   PCSel=1;
 				end
 				3'b001 : begin							//BNE					
 					MemtoReg  =0;
